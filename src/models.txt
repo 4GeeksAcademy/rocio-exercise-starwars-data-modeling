@@ -1,0 +1,36 @@
+Users
+-
+ID PK int
+username  string INDEX
+firstname string
+lastname string
+email unique string
+password unique string
+
+Likes
+-
+ID PK int
+user_id int FK >- Users.ID
+favorite_id int FK >-< Planets.ID fk >-< Vehicles.ID fk >-< Character.ID
+
+
+Character
+-
+ID PK int FK 
+name string
+gender string
+homeworld string FK >- Planets.ID
+
+Planets
+-
+ID PK int FK 
+name string
+gravity string
+population string
+
+Vehicles
+-
+ID int pk
+name string
+model string
+passengers int
